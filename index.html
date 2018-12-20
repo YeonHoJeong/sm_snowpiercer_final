@@ -68,13 +68,14 @@
 		<!-- onscroll animation -->
 		<script src="js/wow.min.js"></script>
 		<!-- D3.js -->
-		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script src="http://d3js.org/d3.v4.min.js"></script>
 		<!-- Snow Flakes -->
 		<script src="js/snowflakes/ready.min.js" type="text/javascript"></script>
 		<script src="js/snowflakes/snowflakes.js"></script>
 		<!--Leaflet JS-->
 		<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 		<script src="js/map/L.Polyline.SnakeAnim.js"></script>
+
 		<!-- Custom Functions -->
 		<script src="js/main.js"></script>
 
@@ -118,12 +119,9 @@
 				<!-- main nav -->
                 <nav class="collapse navbar-collapse navbar-right" role="navigation">
                     <ul id="nav" class="nav navbar-nav">
-                        <li><a href="#body">Title</a></li>
-                        <li><a href="#service">Introduction</a></li>
-                        <li><a href="#portfolio">Character</a></li>
-                        <li><a href="#testimonials">Highlight</a></li>
-                        <li><a href="#price">Story Keword</a></li>
-                        <li><a href="#contact">Train</a></li>
+                        <li><a href="#body">About</a></li>
+                        <li><a href="#testimonials">Character</a></li>
+                        <li><a href="#story_scene">Story</a></li>
                     </ul>
                 </nav>
 				<!-- /main nav -->
@@ -144,28 +142,31 @@
             <div id="slider" class="sl-slider-wrapper">
 
 				<div class="sl-slider">
-				
+					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+						<div class="bg-img bg-img-2"></div>
+						<div class="slide-caption">
+							<div class="caption-content">
+							</div>
+						</div>
+					</div>
 					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
 
 						<div class="bg-img bg-img-1"></div>
-
 						<div class="slide-caption">
+							<div class="bg-img bg-img-2"></div>
+							<div class="slide-caption">
+								<div class="caption-content">
+								</div>
+							</div>
                             <div class="caption-content">
                                 <h2 class="animated fadeInDown">SM-인텔리전스 기말 프로젝트</h2>
                                 <span class="animated fadeInDown">설국열차 스토리를 표현한 페이지</span>
                                 <a href="#" class="btn btn-blue btn-effect">Github</a>
                             </div>
                         </div>
-						
 					</div>
-					
-					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-						<div class="bg-img bg-img-2"></div>
-						<div class="slide-caption">
-                            <div class="caption-content">
-                            </div>
-                        </div>
-					</div>
+
+
 				</div><!-- /sl-slider -->
 
                 <!-- 
@@ -207,13 +208,26 @@
 								<h3>줄거리</h3>
 								<div id="works">
 									<div class="work-item">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br> <br> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+										<p>지구온난화를 해결하기 위해 개발된 방법은 오히려 지구에 빙하기를 가져왔다. 그리고 무한히 돌아가는 엔진을 장착한 윌포드의 기차만이 인간이 살아남은 유일한 공간이 되었다.<br><br>
+											그로인해 비롯된 혼돈은 기차 안 사람들 간에 보이지 않는 계급과 차별을 낳았다.
+											기차 머리칸에 있는 엔진과 멀어질수록 그 칸에 사는 사람들의 생활은 빈곤하다.</p>
 									</div>
 									<div class="work-item">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+										<p>그리고 기차가 유지되는 적정한 균형을 맞추기 위해 많은 사람들이 죽임을 당한다.
+											하지만 그러한 균형의 개념을 알지 못한 이들에겐 그것은 학살에 불과하다.
+											억울함이 쌓인 꼬리칸 사람들은 커티스를 중심으로 앞칸을 차지하려는 반란을 일으킨다.
+											<br><br>
+											감옥칸에 갇힌 열차보안설계자 남궁민수와 그의 딸 요나에게 크레놀을 주고 각칸의 문을 열어주길 부탁한다.
+											앞으로 전진해가던 중, 커티스는 비록 친동생 같았던 에드가를 잃었지만 때마침 군대를 지휘하던 메이슨을 생포해 싸움을 진압하고 커티스 무리는 앞으로 계속 전진할 수 있게 되었다.</p>
 									</div>
 									<div class="work-item">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+										<p>
+											이어서 등장한 가진 자들만이 향유하고 있는 앞칸의 평화롭고 여유로운 모습은 꼬리칸 사람들의 생활과는 극과 극을 보여준다.
+											드디어 대면한 윌포드와 커티스. 윌포드는 커티스에게 기차, 즉 인류가 생존하기 위해서는 일정한 비율의 인간과 식량을 유지해야 한다고 설명한다.
+											하지만 그 희생의 대부분은 꼬리칸 사람들이고, 희생을 강요당한 꼬리칸의 분노를 대표한 커티스는 기차, 즉 체제 자체를 파괴하기로 결심한다.
+											<br>
+											남궁민수가 그동안 모아놨던 크레놀을 뭉쳐 폭탄을 터트리고, 폭탄이 터지면서 초래된 눈사태로인해 기차가 부서지고 결국 요나와 타냐의 아들만이 살아남는다.
+										</p>
 									</div>
 								</div>
 							</div>
@@ -222,9 +236,12 @@
 							<div class="welcome-block">
 								<h3>감독</h3>
 						     	 <div class="message-body">
-									<img src="img/member-1.jpg" class="pull-left" alt="member">
-						       		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-						     	 </div>
+									<img src="img/봉준호감독.jpeg" class="pull-left" alt="member">
+									 <p>&lt설국열차&gt는 계급투쟁, 혁명에 관한 이야기가 아니다. 인간의 생존에 관한 이야기다. 인간의 생존에 어쩔 수 없이 개입되는 계급적인 차별과 각자의 맡은 바 임무들, 그것은 어쩔 수 없는 것이 아님에도, 이 영화는 그것을 받아들여만 설국기차를 끌고 가는 엔진이 영원할 것이라고 주장하는 것이다. 그런 점에서 철저하게 자본주의적이다.
+										 <br><br>
+										 감독의 말에 따르면, 설국열차의 엔딩은 100% 해피엔딩이다. 한 시스템이, 한 체제가 종말을 고했고, 인류의 새로운 시작인 것이다.</p>
+
+								 </div>
 						       	<a href="#" class="btn btn-border btn-effect pull-right">Read More</a>
 						    </div>
 						</div>
@@ -232,164 +249,17 @@
 				</div>
 			</section>
 			<!-- end about section -->
-			
-			
-			<!-- Service section -->
-			<section id="service">
-				<div class="container">
-					<div class="row">
-					
-						<div class="sec-title text-center">
-							<h2 class="wow animated bounceInLeft">Service</h2>
-							<p class="wow animated bounceInRight">The Key Features of our Job</p>
-						</div>
-						
-						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn">
-							<div class="service-item">
-								<div class="service-icon">
-									<i class="fa fa-home fa-3x"></i>
-								</div>
-								<h3>Support</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-							</div>
-						</div>
-					
-						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.3s">
-							<div class="service-item">
-								<div class="service-icon">
-									<i class="fa fa-tasks fa-3x"></i>
-								</div>
-								<h3>Well Documented</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-							</div>
-						</div>
-					
-						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.6s">
-							<div class="service-item">
-								<div class="service-icon">
-									<i class="fa fa-clock-o fa-3x"></i>
-								</div>
-								<h3>Design UI/UX</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-							</div>
-						</div>
-					
-						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s">
-							<div class="service-item">
-								<div class="service-icon">
-									<i class="fa fa-heart fa-3x"></i>
-								</div>
-								
-								<h3>Web Security</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>							
-							</div>
-						</div>
-						
-					</div>
-				</div>
-			</section>
-			<!-- end Service section -->
-			
-			<!-- portfolio section -->
-			<section id="portfolio">
-				<div class="container">
-					<div class="row">
-					
-						<div class="sec-title text-center wow animated fadeInDown">
-							<h2>FEATURED PROJECTS</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-						
 
-						<ul class="project-wrapper wow animated fadeInUp">
-							<li class="portfolio-item">
-								<img src="img/portfolio/item.jpg" class="img-responsive" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
-								<figcaption class="mask">
-									<h3>Wall street</h3>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-								</figcaption>
-								<ul class="external">
-									<li><a class="fancybox" title="Araund The world" data-fancybox-group="works" href="img/portfolio/item.jpg"><i class="fa fa-search"></i></a></li>
-									<li><a href=""><i class="fa fa-link"></i></a></li>
-								</ul>
-							</li>
-							
-							<li class="portfolio-item">
-								<img src="img/portfolio/item2.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
-								<figcaption class="mask">
-									<h3>Wall street</h3>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-								</figcaption>
-								<ul class="external">
-									<li><a class="fancybox" title="Wall street" href="img/slider/banner.jpg" data-fancybox-group="works" ><i class="fa fa-search"></i></a></li>
-									<li><a href=""><i class="fa fa-link"></i></a></li>
-								</ul>
-							</li>
-							
-							<li class="portfolio-item">
-								<img src="img/portfolio/item3.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
-								<figcaption class="mask">
-									<h3>Wall street</h3>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-								</figcaption>
-								<ul class="external">
-									<li><a class="fancybox" title="Behind The world" data-fancybox-group="works" href="img/portfolio/item3.jpg"><i class="fa fa-search"></i></a></li>
-									<li><a href=""><i class="fa fa-link"></i></a></li>
-								</ul>
-							</li>
-							
-							<li class="portfolio-item">
-								<img src="img/portfolio/item4.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry.">
-								<figcaption class="mask">
-									<h3>Wall street</h3>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-								</figcaption>
-								<ul class="external">
-									<li><a class="fancybox" title="Wall street 4" data-fancybox-group="works" href="img/portfolio/item4.jpg"><i class="fa fa-search"></i></a></li>
-									<li><a href=""><i class="fa fa-link"></i></a></li>
-								</ul>
-							</li>
-							
-							<li class="portfolio-item">
-								<img src="img/portfolio/item5.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
-								<figcaption class="mask">
-									<h3>Wall street</h3>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-								</figcaption>
-								<ul class="external">
-									<li><a class="fancybox" title="Wall street 5" data-fancybox-group="works" href="img/portfolio/item5.jpg"><i class="fa fa-search"></i></a></li>
-									<li><a href=""><i class="fa fa-link"></i></a></li>
-								</ul>
-							</li>
-							
-							<li class="portfolio-item">
-								<img src="img/portfolio/item6.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
-								<figcaption class="mask">
-									<h3>Wall street</h3>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-								</figcaption>
-								<ul class="external">
-									<li><a class="fancybox" title="Wall street 6" data-fancybox-group="works" href="img/portfolio/item6.jpg"><i class="fa fa-search"></i></a></li>
-									<li><a href=""><i class="fa fa-link"></i></a></li>
-								</ul>
-							</li>
-						</ul>
-						
-					</div>
-				</div>
-			</section>
-			<!-- end portfolio section -->
-			
-			<!-- Testimonial section -->
+			<!-- 등장인물 섹션 시작 -->
 			<section id="testimonials" class="parallax">
 				<div class="overlay">
 					<div class="container">
 						<div class="row">
-						
+
 							<div class="sec-title text-center white wow animated fadeInDown">
 								<h2>등장인물</h2>
 							</div>
-							
+
 							<div id="testimonial" class=" wow animated fadeInUp">
 								<div class="testimonial-item text-center">
 									<img src="img/character/커티스.jpeg" alt="Our Clients">
@@ -466,13 +336,13 @@
 					</div>
 				</div>
 			</section>
-			<!-- end Testimonial section -->
-			
-			<!-- Price section -->
+			<!-- 등장인물 섹션 끝 -->
+
+			<!-- 인물 관계도 섹션 시작 -->
 			<section id="price">
 				<div class="container">
 					<div class="row">
-					
+
 						<div class="sec-title text-center wow animated fadeInDown">
 							<h2>인물관계도</h2>
 							<p></p>
@@ -598,7 +468,7 @@
                                 var vis;
 
                                 //froce 레이아웃 형성
-                                var force = d3.layout.force();
+                                var force = d3.forceSimulation();
 
                                 //vis섹션에 가로 w이고 높이 h인 기본 svg 틀 생성
                                 vis = d3.select("#vis")
@@ -627,10 +497,13 @@
                                 //프로그램 시작, 클릭, 이벤트가 일어날때 실행할 update함수
                                 function update() {
                                     var nodes = flatten(root), //flatten(root)함수의 리턴값 저장
-                                        links = d3.layout.tree().links(nodes); //트리 레이아웃으로 노드연결
+                                        hierarchy = d3.hierarchy(nodes);
+                                    	tree = d3.tree();
+                                        linkData = tree(hierarchy).links(); //트리 레이아웃으로 노드연결
 
                                     //force레이아웃 재시작
-                                    force.nodes(nodes).links(links).gravity(0.05) //클수록 노드들이 아래로 쳐짐
+
+                                    force.nodes(nodes).force("link").links(linkData).gravity(0.05) //클수록 노드들이 아래로 쳐짐
                                         .charge(-1400) //수가 작을수록 퍼지게 됨
                                         .linkDistance(100) //연결된 노드 간의 거리
                                         .friction(0.6) //부딪치는 정도 높을수록 노드끼리 가까이 못감
@@ -776,36 +649,124 @@
 					</div>
 				</div>
 			</section>
-			<!-- end Price section -->
-			
-			<!-- Social section -->
-			<section id="social" class="parallax">
-				<div class="overlay">
-					<div class="container">
-						<div class="row">
+			<!-- 인물 관계도 섹션 끝 -->
+
+
+			<!--씬 섹션 시작 -->
+			<section id="story_scene">
+				<div class="container">
+					<div class="row">
+					
+						<div class="sec-title text-center wow animated fadeInDown">
+							<h2>장면</h2>
+							<p>영화 내 주요장면들</p>
+						</div>
 						
-							<div class="sec-title text-center white wow animated fadeInDown">
-								<h2>FOLLOW US</h2>
-								<p>Beautifully simple follow buttons to help you get followers on</p>
-							</div>
+
+						<ul class="project-wrapper wow animated fadeInUp">
+							<li class="portfolio-item">
+								<img src="img/story/씬1.png" class="img-responsive" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
+								<figcaption class="mask">
+									<h3>Wall street</h3>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
+								</figcaption>
+								<ul class="external">
+									<li><a class="fancybox" title="Araund The world" data-fancybox-group="works" href="img/story/씬1.png"><i class="fa fa-search"></i></a></li>
+									<li><a href=""><i class="fa fa-link"></i></a></li>
+								</ul>
+							</li>
 							
-							<ul class="social-button">
-								<li class="wow animated zoomIn"><a href="#"><i class="fa fa-thumbs-up fa-2x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="0.6s"><a href="#"><i class="fa fa-dribbble fa-2x"></i></a></li>							
-							</ul>
+							<li class="portfolio-item">
+								<img src="img/story/씬2.png" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
+								<figcaption class="mask">
+									<h3>Wall street</h3>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
+								</figcaption>
+								<ul class="external">
+									<li><a class="fancybox" title="Wall street" href="img/story/씬2.png" data-fancybox-group="works" ><i class="fa fa-search"></i></a></li>
+									<li><a href=""><i class="fa fa-link"></i></a></li>
+								</ul>
+							</li>
 							
+							<li class="portfolio-item">
+								<img src="img/story/씬3.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
+								<figcaption class="mask">
+									<h3>Wall street</h3>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
+								</figcaption>
+								<ul class="external">
+									<li><a class="fancybox" title="Behind The world" data-fancybox-group="works" href="img/story/씬3.jpg"><i class="fa fa-search"></i></a></li>
+									<li><a href=""><i class="fa fa-link"></i></a></li>
+								</ul>
+							</li>
+							
+							<li class="portfolio-item">
+								<img src="img/story/씬4.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry.">
+								<figcaption class="mask">
+									<h3>Wall street</h3>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
+								</figcaption>
+								<ul class="external">
+									<li><a class="fancybox" title="Wall street 4" data-fancybox-group="works" href="img/story/씬4.jpg"><i class="fa fa-search"></i></a></li>
+									<li><a href=""><i class="fa fa-link"></i></a></li>
+								</ul>
+							</li>
+							
+							<li class="portfolio-item">
+								<img src="img/story/씬5.png" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
+								<figcaption class="mask">
+									<h3>Wall street</h3>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
+								</figcaption>
+								<ul class="external">
+									<li><a class="fancybox" title="Wall street 5" data-fancybox-group="works" href="img/story/씬5.png"><i class="fa fa-search"></i></a></li>
+									<li><a href=""><i class="fa fa-link"></i></a></li>
+								</ul>
+							</li>
+							
+							<li class="portfolio-item">
+								<img src="img/story/씬6.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
+								<figcaption class="mask">
+									<h3>Wall street</h3>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
+								</figcaption>
+								<ul class="external">
+									<li><a class="fancybox" title="Wall street 6" data-fancybox-group="works" href="img/story/씬6.jpg"><i class="fa fa-search"></i></a></li>
+									<li><a href=""><i class="fa fa-link"></i></a></li>
+								</ul>
+							</li>
+						</ul>
+						
+					</div>
+				</div>
+			</section>
+			<!-- 씬 섹션 끝 -->
+
+			<!-- 스토리 키워드 섹션 시작 -->
+			<section id="story">
+				<div class="container">
+					<div class="row">
+
+						<div class="sec-title text-center wow animated fadeInDown">
+							<h2>스토리 키워드</h2>
+							<p></p>
+						</div>
+						<div class="col-md-12 text-center wow animated fadeInUp">
+							<svg width="1000" height="700" id = "story_keword"></svg>
+							<!--Elipse-force-->
+							<script src="js/Graph.js"></script>
+							<script src="js/Ellipse-force.js"></script>
 						</div>
 					</div>
 				</div>
 			</section>
-			<!-- end Social section -->
-			
+			<!-- 스토리 키워드 섹션 끝-->
+
 			<!-- Contact section -->
 			<section id="contact" >
 				<div class="container">
 					<div class="row">
-						
+
 						<div class="sec-title text-center wow animated fadeInDown">
 							<h2>경로</h2>
 						</div>
@@ -890,7 +851,6 @@
 					</div>
 				</div>
 			</section>
-		
 		</main>
 		
 		<footer id="footer">
@@ -898,28 +858,12 @@
 				<div class="row text-center">
 					<div class="footer-content">
 						<div class="wow animated fadeInDown">
-							<p>newsletter signup</p>
-							<p>Get Cool Stuff! We hate spam!</p>
-						</div>
-						<form action="#" method="post" class="subscribe-form wow animated fadeInUp">
-							<div class="input-field">
-								<input type="email" class="subscribe form-control" placeholder="Enter Your Email...">
-								<button type="submit" class="submit-icon">
-									<i class="fa fa-paper-plane fa-lg"></i>
-								</button>
-							</div>
-						</form>
-						<div class="footer-social">
-							<ul>
-								<li class="wow animated zoomIn"><a href="#"><i class="fa fa-thumbs-up fa-3x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="#"><i class="fa fa-twitter fa-3x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="0.6s"><a href="#"><i class="fa fa-skype fa-3x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="0.9s"><a href="#"><i class="fa fa-dribbble fa-3x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="1.2s"><a href="#"><i class="fa fa-youtube fa-3x"></i></a></li>
-							</ul>
+							<p>SM-소셜인텔리전스</p>
+							<p>기말고사 대체과제</p>
 						</div>
 						
-						<p>Copyright &copy; 2014-2015 Design and Developed By<a href="http://www.themefisher.com">Themefisher</a> </p>
+						<p>13011213&nbsp&nbsp&nbsp&nbsp&nbsp14011882</p>
+						<p>정연호&nbsp&nbsp&nbsp&nbsp&nbsp최혜은</p>
 					</div>
 				</div>
 			</div>

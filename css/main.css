@@ -1456,3 +1456,12 @@ path.link {
     width: 800px;
     height: 400px;
 }
+
+.link line {
+    stroke:#CCA63D;
+}
+.labels text {
+    pointer-events: none; /*글 위에 커서를 두었을 때 드래그가 불가능하도록 설정*/
+    font: 10px sans-serif;
+    text-align: center;
+}
