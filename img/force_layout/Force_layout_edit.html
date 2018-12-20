@@ -1,0 +1,345 @@
+<!DOCTYPE	html>
+<meta charset="UTF-8">
+<html>
+
+<head>
+      <title>설국열차 등장인물</title>
+      <script src="http://d3js.org/d3.v3.min.js"></script>
+      <style type="text/css">
+            body {
+                  width: 100%;
+                  margin: 0;
+            }
+
+            path.link {
+                  fill: none;
+                  stroke-width: 3px;
+            }
+
+            h1 {
+                  font-size: 30px;
+                  margin: 30px 0;
+                  text-transform: uppercase;
+                  font-weight: normal;
+            }
+
+            /*마우스 올렸을 때 텍스트 출력하기*/
+            .node:not(:hover) .nodetext {
+                  display: none;
+            }
+
+      </style>
+</head>
+
+<body>
+      <center>
+            <header>
+                  <h1>Word that you click</h1>
+                  <h2></h2>
+            </header>
+
+            <section id="vis"> </section>
+      </center>
+
+      <script>
+          //사용할 데이터
+          var SnowpiercerJson = {
+              "name": "title",
+              "img": "메인포스터.jpg",
+              "children": [{
+                  "name": "front section", //머리칸 등장인물
+                  "children": [{
+                      "word": "윌포드", //윌포드가
+                      "freq": 52, //영화에서 머리칸 인물 중 권력 비중이 가장 높음
+                      "sentim": 0.8,
+                      "img": "윌포드.jpg", //등장인물 이미지 삽입
+                      "size": 40000 //크기 선정
+                  },
+                      {
+                          "word": "메이슨",
+                          "freq": 45,
+                          "sentim": 0.8,
+                          "img": "메이슨.jpg",
+                          "size": 40000
+                      },
+                      {
+                          "word": "형프랑코",
+                          "freq": 42,
+                          "sentim": 0.8,
+                          "img": "형프랑코.jpg",
+                          "size": 40000
+                      },
+                      {
+                          "word": "동생프랑코",
+                          "freq": 48,
+                          "sentim": 0.75,
+                          "img": "동생프랑코.jpg",
+                          "size": 40000
+                      },
+                      {
+                          "word": "교사",
+                          "freq": 38,
+                          "sentim": 0.75,
+                          "img": "교사.jpg",
+                          "size": 40000
+                      }
+                  ]
+              },
+                  {
+                      "name": "tail section", //꼬리칸 등장인물
+                      "children": [{
+                          "word": "커티스",
+                          "freq": 55,
+                          "sentim": 0.5,
+                          "img": "커티스.jpg",
+                          "size": 40000
+                      },
+                          {
+                              "word": "길리엄",
+                              "freq": 43,
+                              "sentim": 0.5,
+                              "img": "길리엄.jpg",
+                              "size": 40000
+                          },
+                          {
+                              "word": "에드가",
+                              "freq": 21,
+                              "sentim": 0.5,
+                              "img": "에드가.jpg",
+                              "size": 40000
+                          },
+                          {
+                              "word": "타냐",
+                              "freq": 22,
+                              "sentim": 0.4,
+                              "img": "타냐.jpg",
+                              "size": 40000
+                          },
+                          {
+                              "word": "남궁민수",
+                              "freq": 22,
+                              "sentim": 0.4,
+                              "img": "남궁민수.jpg",
+                              "size": 40000
+                          },
+                          {
+                              "word": "요나",
+                              "freq": 22,
+                              "sentim": 0.4,
+                              "img": "요나.jpg",
+                              "size": 40000
+                          },
+                          {
+                              "word": "앤드류",
+                              "freq": 22,
+                              "sentim": 0.4,
+                              "img": "앤드류.jpg",
+                              "size": 40000
+                          },
+                          {
+                              "word": "그레이",
+                              "freq": 22,
+                              "sentim": 0.4,
+                              "img": "그레이.jpg",
+                              "size": 40000
+                          }
+                      ]
+                  }
+              ]
+
+          }
+
+          //기본 색상 및 아래코드에서 사용할 변수 설정
+          var tcBlack = "#130C0E";
+          var w = 900,
+              h = 700,
+              maxNodeSize = 50,
+              x_browser = 20,
+              y_browser = 25,
+              root;
+          var vis;
+
+          //froce 레이아웃 형성
+          var force = d3.layout.force();
+
+          //vis섹션에 가로 w이고 높이 h인 기본 svg 틀 생성
+          vis = d3.select("#vis")
+              .append("svg")
+              .attr("width", w)
+              .attr("height", h);
+
+          var json = SnowpiercerJson; //데이터 연결변수
+          root = json; //뿌리에 데이터 저장
+
+          d3.json(json, function(json) {
+
+              root.fixed = true; //Root갈색원 위치 고정
+              root.x = w / 2;
+              root.y = h / 4;
+
+              //path(노드끼리) 연결방식 정의
+              var defs = vis.insert("svg:defs").data([]);
+              defs.enter().append("svg:path");
+
+              //업데이트 함수 실행
+              update();
+          });
+
+
+          //프로그램 시작, 클릭, 이벤트가 일어날때 실행할 update함수
+          function update() {
+              var nodes = flatten(root), //flatten(root)함수의 리턴값 저장
+                  links = d3.layout.tree().links(nodes); //트리 레이아웃으로 노드연결
+
+              //force레이아웃 재시작
+              force.nodes(nodes).links(links).gravity(0.05) //클수록 노드들이 아래로 쳐짐
+                  .charge(-1400) //수가 작을수록 퍼지게 됨
+                  .linkDistance(100) //연결된 노드 간의 거리
+                  .friction(0.6) //부딪치는 정도 높을수록 노드끼리 가까이 못감
+                  .linkStrength(function(l, i) {
+                      return 1;
+                  })
+                  .size([w, h]).on("tick", tick).start();
+
+              //위치에 따른 연결선 삽입하는 방식 정의
+              var path = vis.selectAll("path.link")
+                  .data(links, function(d) {
+                      return d.target.id;
+                  });
+              path.enter().insert("svg:path").attr("class", "link")
+                  .style("stroke", "#eee");
+              path.exit().remove();
+
+              //노드 업데이트 방식 정의
+              var node = vis.selectAll("g.node")
+                  .data(nodes, function(d) {
+                      return d.id;
+                  });
+
+              //새 노드 입력 방식정의
+              var nodeEnter = node.enter().append("svg:g")
+                  .attr("class", "node")
+                  .attr("transform", function(d) {
+                      return "translate(" + d.x + "," + d.y + ")";
+                  })
+                  .on("click", click).call(force.drag);
+              nodeEnter.append("svg:circle")
+                  .attr("r", function(d) {
+                      return Math.sqrt(d.size) / 10 || 4.5;
+                  })
+                  .style("fill", "lightgray");
+
+              //이미지 연결방식 정의
+              var images = nodeEnter.append("svg:image")
+                  .attr("xlink:href", function(d) {
+                      return d.img;
+                  })
+                  .attr("x", function(d) {
+                      return -25;
+                  })
+                  .attr("y", function(d) {
+                      return -25;
+                  })
+                  .attr("height", 100).attr("width", 100);
+
+              //이벤트 처리 방식 정의
+              var setEvents = images
+              //아이콘 눌렀을 때 문장 띄우기
+                  .on('click', function(d) {
+                      if (d.freq) {
+                          d3.select("h1").html(d.word);
+                          d3.select("h2").html("This word came out " + de.freq + "times in the movie.");
+                      } else {
+                          d3.select("h1").html("Click the word");
+                          d3.select("h2").html(" ");
+                      }
+
+                  })
+                  //마우스 올렸을 때
+                  .on('mouseenter', function() {
+                      d3.select(this).transition()
+                          .attr("x", function(d) {
+                              return -60;
+                          })
+                          .attr("y", function(d) {
+                              return -60;
+                          })
+                          .attr("height", 200).attr("width", 200);
+                  })
+                  //마우스 내렸을 때
+                  .on('mouseleave', function() {
+                      d3.select(this).transition()
+                          .attr("x", function(d) {
+                              return -25;
+                          })
+                          .attr("y", function(d) {
+                              return -25;
+                          })
+                          .attr("height", 100).attr("width", 100);
+                  });
+              //노드 옆에 단어 띄우기
+              nodeEnter.append("text").attr("class", "nodetext")
+                  .attr("x", x_browser).attr("y", y_browser + 15)
+                  .attr("fill", tcBlack).text(function(d) {
+                  return d.word;
+              });
+              //이전노드 지우기
+              node.exit().remove();
+
+
+              //업데이트 위해 각기 path&node다시 선택하기
+              path = vis.selectAll("path.link");
+              node = vis.selectAll("g.node");
+
+              //tick 함수 정의
+              function tick() {
+                  path.attr("d", function(d) {
+                      var dx = d.target.x - d.source.x,
+                          dy = d.target.y - d.source.y,
+                          dr = Math.sqrt(dx * dx + dy * dy);
+                      return "M" + d.source.x + "," + d.source.y +
+                          "A" + dr + "," + dr + " 0 0,1" + d.target.x +
+                          "," + d.target.y;
+                  });
+                  node.attr("transform", nodeTransform);
+              }
+
+              //노드를 동그란 프레임 안에 두는 함수
+              function nodeTransform(d) {
+                  d.x = Math.max(maxNodeSize, Math.min(w - (d.imgwidth / 2 || 16), d.x));
+                  d.y = Math.max(maxNodeSize, Math.min(h - (d.imgheight / 2 || 16), d.y));
+                  return "translate(" + d.x + "," + d.y + ")";
+              }
+
+              //children이 존재하는 노드 클릭 시
+              function click(d) {
+                  if (d.children) {
+                      d._children = d.children;
+                      d.children = null;
+                  } else {
+                      d.children = d._children;
+                      d._children = null;
+                  }
+                  update();
+              }
+
+              //루트 아래에 모든 리스트 출력하는 함수
+              function flatten(root) {
+                  var nodes = [];
+                  var i = 0;
+
+                  function recurse(node) {
+                      if (node.children)
+                          node.children.forEach(recurse);
+                      if (!node.id)
+                          node.id = ++i;
+                      nodes.push(node);
+                  }
+                  recurse(root);
+                  return nodes;
+              }
+          }
+      </script>
+</body>
+
+</html>
