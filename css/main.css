@@ -1465,3 +1465,7 @@ path.link {
     font: 10px sans-serif;
     text-align: center;
 }
+
+#mapid{
+    left : 100px;
+}

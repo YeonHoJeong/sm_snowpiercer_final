@@ -224,8 +224,8 @@
 										<p>
 											이어서 등장한 가진 자들만이 향유하고 있는 앞칸의 평화롭고 여유로운 모습은 꼬리칸 사람들의 생활과는 극과 극을 보여준다.
 											드디어 대면한 윌포드와 커티스. 윌포드는 커티스에게 기차, 즉 인류가 생존하기 위해서는 일정한 비율의 인간과 식량을 유지해야 한다고 설명한다.
-											하지만 그 희생의 대부분은 꼬리칸 사람들이고, 희생을 강요당한 꼬리칸의 분노를 대표한 커티스는 기차, 즉 체제 자체를 파괴하기로 결심한다.
-											<br>
+											하지만 희생을 강요당한 꼬리칸의 분노를 대표하는 커티스는 기차, 즉 체제 자체를 파괴하기로 결심한다.
+											<br><br>
 											남궁민수가 그동안 모아놨던 크레놀을 뭉쳐 폭탄을 터트리고, 폭탄이 터지면서 초래된 눈사태로인해 기차가 부서지고 결국 요나와 타냐의 아들만이 살아남는다.
 										</p>
 									</div>
@@ -338,320 +338,6 @@
 			</section>
 			<!-- 등장인물 섹션 끝 -->
 
-			<!-- 인물 관계도 섹션 시작 -->
-			<section id="price">
-				<div class="container">
-					<div class="row">
-
-						<div class="sec-title text-center wow animated fadeInDown">
-							<h2>인물관계도</h2>
-							<p></p>
-						</div>
-						<div class="col-md-12 text-center wow animated fadeInUp" id = "vis">
-							<h3 id="relation"></h3>
-							<script>
-                                //사용할 데이터
-                                var SnowpiercerJson = {
-                                    "name": "title",
-                                    "img": "img/force_layout/메인포스터.jpg",
-                                    "children": [{
-                                        "name": "front section", //머리칸 등장인물
-                                        "children": [{
-                                            "word": "윌포드", //윌포드가
-                                            "freq": 52, //영화에서 머리칸 인물 중 권력 비중이 가장 높음
-                                            "sentim": 0.8,
-                                            "img": "img/force_layout/윌포드.jpg", //등장인물 이미지 삽입
-                                            "size": 40000 //크기 선정
-                                        },
-                                            {
-                                                "word": "메이슨",
-                                                "freq": 45,
-                                                "sentim": 0.8,
-                                                "img": "img/force_layout/메이슨.jpg",
-                                                "size": 40000
-                                            },
-                                            {
-                                                "word": "형프랑코",
-                                                "freq": 42,
-                                                "sentim": 0.8,
-                                                "img": "img/force_layout/형프랑코.jpg",
-                                                "size": 40000
-                                            },
-                                            {
-                                                "word": "동생프랑코",
-                                                "freq": 48,
-                                                "sentim": 0.75,
-                                                "img": "img/force_layout/동생프랑코.jpg",
-                                                "size": 40000
-                                            },
-                                            {
-                                                "word": "교사",
-                                                "freq": 38,
-                                                "sentim": 0.75,
-                                                "img": "img/force_layout/교사.jpg",
-                                                "size": 40000
-                                            }
-                                        ]
-                                    },
-                                        {
-                                            "name": "tail section", //꼬리칸 등장인물
-                                            "children": [{
-                                                "word": "커티스",
-                                                "freq": 55,
-                                                "sentim": 0.5,
-                                                "img": "img/force_layout/커티스.jpg",
-                                                "size": 40000
-                                            },
-                                                {
-                                                    "word": "길리엄",
-                                                    "freq": 43,
-                                                    "sentim": 0.5,
-                                                    "img": "img/force_layout/길리엄.jpg",
-                                                    "size": 40000
-                                                },
-                                                {
-                                                    "word": "에드가",
-                                                    "freq": 21,
-                                                    "sentim": 0.5,
-                                                    "img": "img/force_layout/에드가.jpg",
-                                                    "size": 40000
-                                                },
-                                                {
-                                                    "word": "타냐",
-                                                    "freq": 22,
-                                                    "sentim": 0.4,
-                                                    "img": "img/force_layout/타냐.jpg",
-                                                    "size": 40000
-                                                },
-                                                {
-                                                    "word": "남궁민수",
-                                                    "freq": 22,
-                                                    "sentim": 0.4,
-                                                    "img": "img/force_layout/남궁민수.jpg",
-                                                    "size": 40000
-                                                },
-                                                {
-                                                    "word": "요나",
-                                                    "freq": 22,
-                                                    "sentim": 0.4,
-                                                    "img": "img/force_layout/요나.jpg",
-                                                    "size": 40000
-                                                },
-                                                {
-                                                    "word": "앤드류",
-                                                    "freq": 22,
-                                                    "sentim": 0.4,
-                                                    "img": "img/force_layout/앤드류.jpg",
-                                                    "size": 40000
-                                                },
-                                                {
-                                                    "word": "그레이",
-                                                    "freq": 22,
-                                                    "sentim": 0.4,
-                                                    "img": "img/force_layout/그레이.jpg",
-                                                    "size": 40000
-                                                }
-                                            ]
-                                        }
-                                    ]
-
-                                }
-
-                                //기본 색상 및 아래코드에서 사용할 변수 설정
-                                var tcBlack = "#130C0E";
-                                var w = 900,
-                                    h = 700,
-                                    maxNodeSize = 50,
-                                    x_browser = 20,
-                                    y_browser = 25,
-                                    root;
-                                var vis;
-
-                                //froce 레이아웃 형성
-                                var force = d3.forceSimulation();
-
-                                //vis섹션에 가로 w이고 높이 h인 기본 svg 틀 생성
-                                vis = d3.select("#vis")
-                                    .append("svg")
-                                    .attr("width", w)
-                                    .attr("height", h);
-
-                                var json = SnowpiercerJson; //데이터 연결변수
-                                root = json; //뿌리에 데이터 저장
-
-                                d3.json(json, function(json) {
-
-                                    root.fixed = true; //Root갈색원 위치 고정
-                                    root.x = w / 2;
-                                    root.y = h / 4;
-
-                                    //path(노드끼리) 연결방식 정의
-                                    var defs = vis.insert("svg:defs").data([]);
-                                    defs.enter().append("svg:path");
-
-                                    //업데이트 함수 실행
-                                    update();
-                                });
-
-
-                                //프로그램 시작, 클릭, 이벤트가 일어날때 실행할 update함수
-                                function update() {
-                                    var nodes = flatten(root), //flatten(root)함수의 리턴값 저장
-                                        hierarchy = d3.hierarchy(nodes);
-                                    	tree = d3.tree();
-                                        linkData = tree(hierarchy).links(); //트리 레이아웃으로 노드연결
-
-                                    //force레이아웃 재시작
-
-                                    force.nodes(nodes).force("link").links(linkData).gravity(0.05) //클수록 노드들이 아래로 쳐짐
-                                        .charge(-1400) //수가 작을수록 퍼지게 됨
-                                        .linkDistance(100) //연결된 노드 간의 거리
-                                        .friction(0.6) //부딪치는 정도 높을수록 노드끼리 가까이 못감
-                                        .linkStrength(function(l, i) {
-                                            return 1;
-                                        })
-                                        .size([w, h]).on("tick", tick).start();
-
-                                    //위치에 따른 연결선 삽입하는 방식 정의
-                                    var path = vis.selectAll("path.link")
-                                        .data(links, function(d) {
-                                            return d.target.id;
-                                        });
-                                    path.enter().insert("svg:path").attr("class", "link")
-                                        .style("stroke", "#eee");
-                                    path.exit().remove();
-
-                                    //노드 업데이트 방식 정의
-                                    var node = vis.selectAll("g.node")
-                                        .data(nodes, function(d) {
-                                            return d.id;
-                                        });
-
-                                    //새 노드 입력 방식정의
-                                    var nodeEnter = node.enter().append("svg:g")
-                                        .attr("class", "node")
-                                        .attr("transform", function(d) {
-                                            return "translate(" + d.x + "," + d.y + ")";
-                                        })
-                                        .on("click", click).call(force.drag);
-                                    nodeEnter.append("svg:circle")
-                                        .attr("r", function(d) {
-                                            return Math.sqrt(d.size) / 10 || 4.5;
-                                        })
-                                        .style("fill", "lightgray");
-
-                                    //이미지 연결방식 정의
-                                    var images = nodeEnter.append("svg:image")
-                                        .attr("xlink:href", function(d) {
-                                            return d.img;
-                                        })
-                                        .attr("x", function(d) {
-                                            return -25;
-                                        })
-                                        .attr("y", function(d) {
-                                            return -25;
-                                        })
-                                        .attr("height", 100).attr("width", 100);
-
-                                    //이벤트 처리 방식 정의
-                                    var setEvents = images
-                                    //아이콘 눌렀을 때 문장 띄우기
-                                        .on('click', function(d) {
-                                            if (d.freq) {
-                                                d3.select("#relation").html(d.word);
-                                            } else {
-                                                d3.select("#relation").html("포스터를 클릭 해주세요");
-                                            }
-
-                                        })
-                                        //마우스 올렸을 때
-                                        .on('mouseenter', function() {
-                                            d3.select(this).transition()
-                                                .attr("x", function(d) {
-                                                    return -60;
-                                                })
-                                                .attr("y", function(d) {
-                                                    return -60;
-                                                })
-                                                .attr("height", 200).attr("width", 200);
-                                        })
-                                        //마우스 내렸을 때
-                                        .on('mouseleave', function() {
-                                            d3.select(this).transition()
-                                                .attr("x", function(d) {
-                                                    return -25;
-                                                })
-                                                .attr("y", function(d) {
-                                                    return -25;
-                                                })
-                                                .attr("height", 100).attr("width", 100);
-                                        });
-                                    //노드 옆에 단어 띄우기
-
-                                    //이전노드 지우기
-                                    node.exit().remove();
-
-
-                                    //업데이트 위해 각기 path&node다시 선택하기
-                                    path = vis.selectAll("path.link");
-                                    node = vis.selectAll("g.node");
-
-                                    //tick 함수 정의
-                                    function tick() {
-                                        path.attr("d", function(d) {
-                                            var dx = d.target.x - d.source.x,
-                                                dy = d.target.y - d.source.y,
-                                                dr = Math.sqrt(dx * dx + dy * dy);
-                                            return "M" + d.source.x + "," + d.source.y +
-                                                "A" + dr + "," + dr + " 0 0,1" + d.target.x +
-                                                "," + d.target.y;
-                                        });
-                                        node.attr("transform", nodeTransform);
-                                    }
-
-                                    //노드를 동그란 프레임 안에 두는 함수
-                                    function nodeTransform(d) {
-                                        d.x = Math.max(maxNodeSize, Math.min(w - (d.imgwidth / 2 || 16), d.x));
-                                        d.y = Math.max(maxNodeSize, Math.min(h - (d.imgheight / 2 || 16), d.y));
-                                        return "translate(" + d.x + "," + d.y + ")";
-                                    }
-
-                                    //children이 존재하는 노드 클릭 시
-                                    function click(d) {
-                                        if (d.children) {
-                                            d._children = d.children;
-                                            d.children = null;
-                                        } else {
-                                            d.children = d._children;
-                                            d._children = null;
-                                        }
-                                        update();
-                                    }
-
-                                    //루트 아래에 모든 리스트 출력하는 함수
-                                    function flatten(root) {
-                                        var nodes = [];
-                                        var i = 0;
-
-                                        function recurse(node) {
-                                            if (node.children)
-                                                node.children.forEach(recurse);
-                                            if (!node.id)
-                                                node.id = ++i;
-                                            nodes.push(node);
-                                        }
-                                        recurse(root);
-                                        return nodes;
-                                    }
-                                }
-							</script>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- 인물 관계도 섹션 끝 -->
-
-
 			<!--씬 섹션 시작 -->
 			<section id="story_scene">
 				<div class="container">
@@ -666,10 +352,6 @@
 						<ul class="project-wrapper wow animated fadeInUp">
 							<li class="portfolio-item">
 								<img src="img/story/씬1.png" class="img-responsive" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
-								<figcaption class="mask">
-									<h3>Wall street</h3>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-								</figcaption>
 								<ul class="external">
 									<li><a class="fancybox" title="Araund The world" data-fancybox-group="works" href="img/story/씬1.png"><i class="fa fa-search"></i></a></li>
 									<li><a href=""><i class="fa fa-link"></i></a></li>
@@ -678,10 +360,6 @@
 							
 							<li class="portfolio-item">
 								<img src="img/story/씬2.png" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
-								<figcaption class="mask">
-									<h3>Wall street</h3>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-								</figcaption>
 								<ul class="external">
 									<li><a class="fancybox" title="Wall street" href="img/story/씬2.png" data-fancybox-group="works" ><i class="fa fa-search"></i></a></li>
 									<li><a href=""><i class="fa fa-link"></i></a></li>
@@ -690,10 +368,6 @@
 							
 							<li class="portfolio-item">
 								<img src="img/story/씬3.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
-								<figcaption class="mask">
-									<h3>Wall street</h3>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-								</figcaption>
 								<ul class="external">
 									<li><a class="fancybox" title="Behind The world" data-fancybox-group="works" href="img/story/씬3.jpg"><i class="fa fa-search"></i></a></li>
 									<li><a href=""><i class="fa fa-link"></i></a></li>
@@ -702,10 +376,6 @@
 							
 							<li class="portfolio-item">
 								<img src="img/story/씬4.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry.">
-								<figcaption class="mask">
-									<h3>Wall street</h3>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-								</figcaption>
 								<ul class="external">
 									<li><a class="fancybox" title="Wall street 4" data-fancybox-group="works" href="img/story/씬4.jpg"><i class="fa fa-search"></i></a></li>
 									<li><a href=""><i class="fa fa-link"></i></a></li>
@@ -714,10 +384,6 @@
 							
 							<li class="portfolio-item">
 								<img src="img/story/씬5.png" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
-								<figcaption class="mask">
-									<h3>Wall street</h3>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-								</figcaption>
 								<ul class="external">
 									<li><a class="fancybox" title="Wall street 5" data-fancybox-group="works" href="img/story/씬5.png"><i class="fa fa-search"></i></a></li>
 									<li><a href=""><i class="fa fa-link"></i></a></li>
@@ -726,10 +392,6 @@
 							
 							<li class="portfolio-item">
 								<img src="img/story/씬6.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
-								<figcaption class="mask">
-									<h3>Wall street</h3>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-								</figcaption>
 								<ul class="external">
 									<li><a class="fancybox" title="Wall street 6" data-fancybox-group="works" href="img/story/씬6.jpg"><i class="fa fa-search"></i></a></li>
 									<li><a href=""><i class="fa fa-link"></i></a></li>
@@ -770,8 +432,8 @@
 						<div class="sec-title text-center wow animated fadeInDown">
 							<h2>경로</h2>
 						</div>
-
-						<div class="col-md-12 text-center wow animated fadeInLeft" id="mapid">
+						<div class="col-md-8 text-center wow animated fadeInLeft">
+						<div class="col-md-8 text-center wow animated fadeInLeft" id="mapid">
 							<script>
                                 var map = new L.map('mapid');
 
@@ -780,15 +442,15 @@
                                 }).addTo(map);
 
                                 var markers = [
-                                    [50.913, -1.470],
-                                    [49.627, -1.705],
-                                    [49.829, -7.503],
-                                    [51.770, -8.546],
-                                    [49.251, -22.572],
-                                    [46.656, -36.706],
-                                    [41.731, -49.945],
-                                    [40.651, -74.009]
-                                ];
+                                    [57.71, 54.31],
+									[62.56, 100.57],
+									[66.318, 174.846],
+									[66.287, -140.51],
+									[68.24, -80.40],
+									[-6.79, -70.73],
+									[34.740, 144.03],
+									[31.397, 111.037]
+								];
 
 
                                 var route = L.featureGroup();
@@ -808,23 +470,33 @@
                                         popupAnchor: [-3, -26]
                                     }
                                 });
-                                var titanicIcon = new ShipIcon({
-                                    iconUrl: 'img/icons/ship.png'
+                                var trainIcon = new ShipIcon({
+                                    iconUrl: 'img/train.png'
                                 })
 
 
                                 var popups = [];
 
                                 route.addLayer(new L.Marker(markers[0]));
-                                var line = new L.polyline([markers[0], markers[1]]);
-                                route.addLayer(line);
+                                route.addLayer(new L.Marker(markers[1]));
+                                route.addLayer(new L.Marker(markers[2]));
+                                route.addLayer(new L.Marker(markers[3]));
+                                route.addLayer(new L.Marker(markers[4]));
+                                route.addLayer(new L.Marker(markers[5]));
+                                route.addLayer(new L.Marker(markers[6]));
+                                route.addLayer(new L.Marker(markers[7]));
 
                                 for (var i = 1; i < n - 1; i++) {
-                                    var line = new L.polyline([markers[i], markers[i + 1]]);
-                                    L.marker(markers[6], {
-                                        icon: titanicIcon
-                                    }).bindPopup("1912년 4월 15일 오전 2시 20분 - 침몰").addTo(map);
-                                    route.addLayer(line);
+
+                                    L.marker(markers[0],{icon : trainIcon}).bindPopup("new years day ").addTo(map);
+                                    L.marker(markers[1],{icon : trainIcon}).bindPopup("easter sunday").addTo(map);
+                                    L.marker(markers[2],{icon : trainIcon}).bindPopup("mother's day").addTo(map);
+                                    L.marker(markers[3],{icon : trainIcon}).bindPopup("halloween day").addTo(map);
+                                    L.marker(markers[4],{icon : trainIcon}).bindPopup("father's day").addTo(map);
+                                    L.marker(markers[5],{icon : trainIcon}).bindPopup("summer holiday").addTo(map);
+                                    L.marker(markers[6],{icon : trainIcon}).bindPopup("thanks giving day").addTo(map);
+                                    L.marker(markers[7],{icon : trainIcon}).bindPopup("christ mas").addTo(map);
+
                                 };
                                 route.addLayer(new L.Marker(markers[n - 1]));
 
@@ -859,7 +531,7 @@
 					<div class="footer-content">
 						<div class="wow animated fadeInDown">
 							<p>SM-소셜인텔리전스</p>
-							<p>기말고사 대체과제</p>
+							<p>기말고사 프로젝트 과제</p>
 						</div>
 						
 						<p>13011213&nbsp&nbsp&nbsp&nbsp&nbsp14011882</p>
